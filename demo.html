@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生日祝福 - 大雄搜集站</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<script src="js/garden.js"></script>
+<script src="js/functions.js"></script>
+
+</head>
+
+<body>
+	<div id="mainDiv">	
+		<div id="content">
+			<div id="code">
+				<span class="comments">时光匆匆，岁月荏苒，愿你喜乐围绕，温柔恬静依然善良可爱永远。</span><br />
+				<span class="comments">不祝你事事顺心，人生需要波折，经点风雨才能更加从容。</span><br /><br />
+				<span class="comments">愿你所想之事，皆能如愿。希望你身体一直健康，生活幸福。</span><br /><br />
+				<span class="comments">希望你是这个世界上最开心的人。你能走多远。我就能陪你多久。祝你生日快乐。</span><br /><br />
+				<span class="comments">愿朋友们的祝福汇成一条快乐的银河</span><br /><br /><br />
+				<span class="comments"><b class="bb">来自：soujiz.com祝福</b></span>
+			</div>
+			<div id="loveHeart">
+					<canvas id="garden"></canvas>
+					<div id="words">
+					<div id="messages">					
+					<img src="picture/zsr.png">				
+					</div>
+					<div id="loveu">
+					<img src="picture/sr.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+<center> 
+<!-- 在src中添加背景音乐 -->
+        <audio id="main_audio" autoplay="autoplay" preload="auto" loop>
+            <source src="" type="audio/mpeg" />
+            <embed id="main_audio_ie8" hidden="true" autostart="true" height="0" width=0 loop="true" src="" autoplay="autoplay"/>
+        </audio>
+        <a class="c-white fs-12 icon-play rotate" id="btn-play" href="javascript:void(0);"></a>
+    </div>
+</center>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setHours(8);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "您的浏览器已经过时!请使用非IE浏览器进行预览"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</div>
+
+</div>
+</body>
+</html>
+					
